@@ -44,23 +44,29 @@
 // • Entre las 12:00 y las 20:59 → “¡Buenas tardes!”
 // • Entre las 21:00 y las 05:59 → “¡Buenas noches!”
 
+// const exercise2 = () => {
 
-const excercise2 = () => {     //la función  del sistema.
+// let date = new Date();
+// let hour = date.getHours();
+// let minutes = date.getMinutes();
 
- date = new Date().getHours(); //mostrar fecha y hora
+// if (hour >= 6 && minutes >= 0 && hour <= 11 && minutes <= 59) {
+//   alert("¡Buenos días!");
+// } else if (hour >= 12 && minutes >= 0 && hour <= 20 && minutes <= 59) {
+//   alert("¡Buenas tardes!");
+// } else if ((hour >= 21 && minutes >= 0) || (hour <= 5 && minutes <= 59)) {
+//   alert("¡Buenas noches!");
+// } else{
+//   console.log("system time is failing.");
+// }
+// //};
+// exercise2();
 
 
-if ( date >= 6 && date <= 12 ) {
-    alert("¡Buenos días!");
-}else if (date >= 13 && date < 21){
-    alert("¡Buenas tardes!");
-}else{
-    alert("¡Buenas noches!");
-}
-}
-excercise2();
 
+//excercise 3:
 
-
+// Escribe un programa que genere 10 códigos hexadecimales aleatorios, y escriba en la consola
+// “Hello World!” del color aleatorio generado
 
 
