@@ -34,6 +34,7 @@
 //   console.log("Min value: ", minFound);
 //   console.log("Max value: ", maxFound);
 // };
+// excercise1();
 
 
 //excercise2:
@@ -43,10 +44,23 @@
 // • Entre las 12:00 y las 20:59 → “¡Buenas tardes!”
 // • Entre las 21:00 y las 05:59 → “¡Buenas noches!”
 
-//la fecha del sistema.
-// const dateSystem = new Date();
-// // la hora actual.
-// const currentTimeSystem = dateSystem.getHours();
-// if (currentTimeSystem >= 6 && currentTimeSystem <= 11) {
-//     alert("¡Buenos días!");
-// }
+
+const excercise2 = () => {     //la función  del sistema.
+
+ date = new Date().getHours(); //mostrar fecha y hora
+
+
+if ( date >= 6 && date <= 12 ) {
+    alert("¡Buenos días!");
+}else if (date >= 13 && date < 21){
+    alert("¡Buenas tardes!");
+}else{
+    alert("¡Buenas noches!");
+}
+}
+excercise2();
+
+
+
+
+
