@@ -69,4 +69,160 @@
 // Escribe un programa que genere 10 códigos hexadecimales aleatorios, y escriba en la consola
 // “Hello World!” del color aleatorio generado
 
+// const exercise3 = () => {
 
+//     const generateColor = () =>{
+
+//         let letters = "0123456789ABCDEF";
+//         let color = "#"; //todo color hexadecimal empieza por #
+
+//         //generando codigo de 6 letras o dígitos.
+//         for (let i =0; i < 6; i++){
+//             color += letters[Math.floor(Math.random() * 16)];
+//         }
+//         return color ;
+//     };
+//     for (let i = 1; i <= 10; i++) {
+//     console.log("%cHello World!",`color:${generateColor()}`); //mostraria los 10 colores hexadecimales.
+//     }
+// };
+// exercise3();
+
+
+//excercise 4:
+
+//Para verificar el DNI, se divide el número entre 23 y el resto se sustituye por una letra que se
+//determina por la siguiente tabla:
+//RESTO 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22
+//LETRA T R W A G M Y F P D  X  B  N  J  Z  S  Q  V  H  L  C  K  E
+//Escribe un programa que almacena un DNI dado por el usuario, y verifica si es un DNI válido,
+//lanzando una alerta “Valid DNI” o “The data entered is wrong”.
+//** Bonus: añade un programa que genera DNI válidos aleatorios. **
+
+const excercise4 = () => {
+    const idArray = ["T","R","W","A","G","M","Y","F","P","D","X","B","N","J","Z","S","Q","V","H","L","C","K","E"];
+    let dni = prompt("Please, enter your DNI: ");
+    let numbers = dni.substring(0, dni.length - 1);
+    let letter = dni.substring(dni.length - 1);
+    // console.log(letter);
+    if (validLetters[parseInt(numbers) % 23] == letter) {
+      alert("Valid DNI");
+    } else {
+      alert("The data entered is wrong");
+    }
+  
+    const dniGenerator = () => {
+      let randomNumber = Math.floor(
+        Math.random() * (100000000 - 10000000) + 10000000
+      );
+      randomNumber += validLetters[randomNumber % 23];
+      return randomNumber;
+    };
+    for (let index = 0; index < 100; index++) {
+      console.log(dniGenerator());
+    }
+  };
+
+excercise4();
+
+
+
+
+
+//excercise 5:
+
+// Escribe un programa que genera matrículas aleatorias, sabiendo que:
+// • Una matrícula válida debe estar compuesta por 4 números y 3 letras.
+// • Los números pueden ir desde 0000 hasta 9999
+// • Las letras pueden ir desde BBB hasta ZZZ
+// • No se permiten vocales
+// • No se permiten las consonantes O ni Q
+// El número de matrículas aleatorias será a petición del usuario.
+
+
+
+
+
+
+//excercise 6:
+
+// Recopila 20 citas aleatorias de una temática a tu elección, y almacénalas en un array. A
+// continuación, investiga las funciones setInterval y setTimeout para generar una cita aleatoria, que
+// se mostrará en consola, cada 10 segundos, durante 2 minutos.
+
+// const excercise6 =() => { 
+//     let timeInterval = 10000; //ms es 10s.
+//     let timeOut = 120000; //ms es 2min.
+
+// let citesBraveheart = new Array[ 
+//     "Todos los hombres mueren, pero no todos realmente viven. - William Wallace",
+//     "Puede que nos quiten la vida, pero jamás nos quitarán... la libertad - William Wallace",
+//     "Luchad, y puede que muráis. Huid y viviréis... un tiempo al menos. - William Wallace",
+//     "La vida sin libertad no tiene sentido. - William Wallace",
+//     "Tu corazón es libre, ten el valor de hacerle caso. - Malcolm Wallace",
+//     "La historia la escriben aquellos que cuelgan a los héroes. - William Wallace",
+//     "Soy William Walace, y el resto quedáis perdonados. Volved a Inglaterra y decidles a todos que los hijos y las hijas de Escocia ya no son vuestros. - William Wallace",
+//     "Has aprendido a odiar , por fin estás preparado para ser rey. - Robert Bruce, el leproso",
+//     "Si no nos ayudáis ahora sois unos cobardes y si esto es ser escocés yo me avergüenzo de ser escocés. - William Wallace",
+//     "yo creo que vuestra posición existe para proporcionarles la libertad, y voy a asegurarme de que la tengan. - william wallace",
+//     "Amigos, habéis sangrado con Wallace. Sangrad ahora conmigo. - Robert Bruce, el leproso",
+//     "Habéis venido a luchar como hombres libres. Y hombres libres sois. ¿Qué haríais sin libertad?. - William Wallace",
+//     "Si Wallace estuviera aquí, acabaría con los ingleses echando fuego por los ojos... y rayos por el culo, yo soy William Wallace. - William Wallace",
+//     "Todos morimos lo que importa es el cómo y el cuándo. - William Wallace",
+//     "Para hablar con su semejante, un Irlandés debe hablar con dios. - Stephen",
+//     "Escocia solo tiene un problema, está llena de escoceses. - Rey Eduardo",
+//     "¡Puedo luchar! Lo sé, pero es la inteligencia la que nos convierte en hombres. - El joven William Wallace",
+//     "Es un nido de bastardos traidores, no se pondrían de acuerdo ni en el color de la mierda. - Hamish Campbell",
+//     "Las flechas cuestan dinero, los muertos no cuestan nada, envía a la infantería. - Rey Eduardo",
+//     "solo con verle le animaría a invadir todo el reino. - Rey Eduardo",
+// ];
+
+
+// };
+
+//excercise 7:
+
+// Escribe un programa que genera 100 números aleatorios, entre 0 y 500, y los almacena en un array.
+// A continuación filtra todos los números impares, ordenando los pares de mayor a menor.
+
+
+
+
+
+
+
+//excercise 8:
+// Escribe un programa para jugar a la carta más alta. Para el juego se utilizará la baraja de poker, por
+// lo que:
+// • habrá cuatro arrays, uno por cada palo: (clubs, hearts, spades, diamonds)
+// • dentro de cada array habrán las siguientes cartas, cuyo valor está ordenado de mayor a menor:
+// ACE, KING, QUEEN JACK, 10, 9, 8, 7, 6, 5, 4, 3, 2.
+// Se juega contra la banca, con un saldo inicial de 500 €. En cada mano se preguntará al usuario
+// cuanto quiere apostar.
+// Si la apuesta del usuario supera su saldo, se le notificará y se le pedirá que apueste de nuevo. Si la
+// apuesta es válida, se generarán 2 cartas aleatorias, se mostrarán por consola, y se indicará una
+// alerta “You win!”, “You lose” o “Draw”, según corresponda. Se sumará o restará el saldo en función del resultado.
+// Al final de cada mano se le preguntará si quiere seguir jugando, siendo “y” la opción para seguir, y “n” la
+// opción para retirarse.
+// En caso de perder todo el saldo, la partida finaliza. En caso de retirarse, se calcula si ha habido
+// beneficios o pérdidas, y se indica mediante una alerta: “Betting benefits: XXX €”, mostrando las pérdidas
+// con un número negativo, y las ganacias con un número positivo. A continuación, otra alerta con el saldo
+// total: “Total balance: YYY €
+
+
+
+
+
+
+
+//excercise 9:
+
+// El cifrado César es un tipo de cifrado por sustitución en el que una letra en el texto original es
+// reemplazada por otra letra que se encuentra un número fijo de posiciones más adelante en el
+// alfabeto.
+// Por ejemplo, con un desplazamiento de 3, la A sería sustituida por la D (situada 3 lugares a la
+// derecha de la A), la B sería reemplazada por la E, etc. Este método debe su nombre a Julio César,
+// que lo usaba para comunicarse con sus generales.
+// Escribe un programa con una función que recibe 2 parámetros, el primero para indicar si hay que
+// cifrar o descifrar, y el segundo bien texto en claro, o bien el texto codificado mediante el cifrado
+// Cesar. El programa mostrará por consola el string resultante, codificado o no, según corresponda.
