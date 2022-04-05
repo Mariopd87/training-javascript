@@ -1,6 +1,6 @@
-// excercises part 3.
+// exercises part 3.
 
-//excercise1:
+//exercise1:
 
 //Escribe un programa que pregunte al usuario los límites máximo
 //y mínimo, y genere un array de 20 números aleatorios entre esos valores, ambos incluidos.
@@ -34,10 +34,10 @@
 //   console.log("Min value: ", minFound);
 //   console.log("Max value: ", maxFound);
 // };
-// excercise1();
+// exercise1();
 
 
-//excercise2:
+//exercise2:
 // Escribe un programa que recoge la hora del sistema, y al cargar la página muestra un saludo
 // (alerta) en función de la hora, teniendo en cuenta los siguientes rangos:
 // • Entre las 6:00 y las 11:59 → “¡Buenos días!”
@@ -64,7 +64,7 @@
 
 
 
-//excercise 3:
+//exercise 3:
 
 // Escribe un programa que genere 10 códigos hexadecimales aleatorios, y escriba en la consola
 // “Hello World!” del color aleatorio generado
@@ -89,7 +89,7 @@
 // exercise3();
 
 
-//excercise 4:
+//exercise 4:
 
 //Para verificar el DNI, se divide el número entre 23 y el resto se sustituye por una letra que se
 //determina por la siguiente tabla:
@@ -98,38 +98,34 @@
 //Escribe un programa que almacena un DNI dado por el usuario, y verifica si es un DNI válido,
 //lanzando una alerta “Valid DNI” o “The data entered is wrong”.
 //** Bonus: añade un programa que genera DNI válidos aleatorios. **
+ //const exercise4 = ()=>{
+ //let validLetters = ["T","R","W","A","G","M","Y","F","P","D","X","B","N","J","Z","S","Q","V","H","L","C","K","E"];
+// //console.log(validLetters[22]);
+ //let dni = prompt("Please, enter your DNI:");
+ //let numbers = dni.substring(0, dni.length-1);
+// let letters = dni.substring(dni.length-1);
+// //console.log(letters);
+// if (validLetters[parseInt(numbers) % 23] == letters){
+//     alert("Valid DNI");
+// }else{
+//     alert("the data entered is wrong");
+//}       // hasta aquí el ejercicio. 
 
-const excercise4 = () => {
-    const idArray = ["T","R","W","A","G","M","Y","F","P","D","X","B","N","J","Z","S","Q","V","H","L","C","K","E"];
-    let dni = prompt("Please, enter your DNI: ");
-    let numbers = dni.substring(0, dni.length - 1);
-    let letter = dni.substring(dni.length - 1);
-    // console.log(letter);
-    if (validLetters[parseInt(numbers) % 23] == letter) {
-      alert("Valid DNI");
-    } else {
-      alert("The data entered is wrong");
-    }
-  
-    const dniGenerator = () => {
-      let randomNumber = Math.floor(
-        Math.random() * (100000000 - 10000000) + 10000000
-      );
-      randomNumber += validLetters[randomNumber % 23];
-      return randomNumber;
-    };
-    for (let index = 0; index < 100; index++) {
-      console.log(dniGenerator());
-    }
-  };
-
-excercise4();
-
+// aquí el bonus:
+// const dniGenerator = ()=>{
+//     let randomNumber = Math.floor(
+//         Math.random() * (100000000 - 10000000) + 10000000);
+//         randomNumber += validLetters[randomNumber % 23];
+//         return randomNumber;
+// };
+// for (let index = 0; index < 100; index++) {
+//     console.log(dniGenerator());
+// }
+// };   
+// exercise4(); //la llamada de la función.
 
 
-
-
-//excercise 5:
+//exercise 5:
 
 // Escribe un programa que genera matrículas aleatorias, sabiendo que:
 // • Una matrícula válida debe estar compuesta por 4 números y 3 letras.
@@ -139,22 +135,70 @@ excercise4();
 // • No se permiten las consonantes O ni Q
 // El número de matrículas aleatorias será a petición del usuario.
 
+// const exercise5 = ()=>{
+//     let platesNumber = prompt("Please, insert a number to generate:");
+//     let plate =""; 
+//  //numbers
+// const numbersGenerator=()=>{
+//     let number = Math.floor(Math.random() * (10000));
+//     if(number < 10){
+//         plate = "000" + number;
+//     }else if(number < 100){
+//         plate = "00" + number;
+//     }else if (number < 1000){
+//         plate = "0" + number;
+//     }else{
+//         plate = number.toString();
+//     }
+// };
+// const letterGenerator = ()=>{
+// const validChars = [
+//     "B",
+//     "C",
+//     "D",
+//     "F",
+//     "G",
+//     "H",
+//     "J",
+//     "K",
+//     "L",
+//     "M",
+//     "N",
+//     "P",
+//     "R",
+//     "S",
+//     "T",
+//     "V",
+//     "W",
+//     "X",
+//     "Y",
+//     "Z",
+// ];
+
+// //letters
+// for (let index = 0; index < 3; index++) {
+//     plate += validChars[Math.floor(Math.random() * validChars.length)];
+// }
+// };
+// for (let index = 0; index < platesNumber; index++) {
+//     numbersGenerator();
+//     plate += " ";
+//     letterGenerator();
+//     console.log(plate);    
+// }
+// };
+// exercise5();
 
 
 
-
-
-//excercise 6:
+//exercise 6:
 
 // Recopila 20 citas aleatorias de una temática a tu elección, y almacénalas en un array. A
 // continuación, investiga las funciones setInterval y setTimeout para generar una cita aleatoria, que
 // se mostrará en consola, cada 10 segundos, durante 2 minutos.
 
-// const excercise6 =() => { 
-//     let timeInterval = 10000; //ms es 10s.
-//     let timeOut = 120000; //ms es 2min.
-
-// let citesBraveheart = new Array[ 
+// const exercise6 =() => { 
+// let quotes = [ 
 //     "Todos los hombres mueren, pero no todos realmente viven. - William Wallace",
 //     "Puede que nos quiten la vida, pero jamás nos quitarán... la libertad - William Wallace",
 //     "Luchad, y puede que muráis. Huid y viviréis... un tiempo al menos. - William Wallace",
@@ -176,14 +220,34 @@ excercise4();
 //     "Las flechas cuestan dinero, los muertos no cuestan nada, envía a la infantería. - Rey Eduardo",
 //     "solo con verle le animaría a invadir todo el reino. - Rey Eduardo",
 // ];
-
-
+// setTimeout(()=>{
+// clearInterval(intervalId)
+// },120000) //20000;ms es 2min.
+// let intervalId = setInterval(()=>{
+// console.log(quotes[Math.floor(Math.random() * quotes.length)]);
+// },10000)  //10000; ms es 10s.
 // };
+// exercise6();
 
-//excercise 7:
+
+//exercise 7:
 
 // Escribe un programa que genera 100 números aleatorios, entre 0 y 500, y los almacena en un array.
 // A continuación filtra todos los números impares, ordenando los pares de mayor a menor.
+const exercise7 = () =>{
+
+let numbers = new Array (100);
+for(let i = 0; i < numbers.length; i++){
+    numbers[i] =Math.floor(Math.random() * 500 + 1)// para que coja el 500 tambien
+
+}
+//console.log(numbers);
+numbers = numbers.filter((num)=> num % 2 == 0);
+numbers.sort((a,b)=> b - a);
+console.log(numbers);
+};
+
+exercise7();
 
 
 
@@ -191,7 +255,12 @@ excercise4();
 
 
 
-//excercise 8:
+
+
+
+
+
+//exercise 8:
 // Escribe un programa para jugar a la carta más alta. Para el juego se utilizará la baraja de poker, por
 // lo que:
 // • habrá cuatro arrays, uno por cada palo: (clubs, hearts, spades, diamonds)
@@ -215,7 +284,7 @@ excercise4();
 
 
 
-//excercise 9:
+//exercise 9:
 
 // El cifrado César es un tipo de cifrado por sustitución en el que una letra en el texto original es
 // reemplazada por otra letra que se encuentra un número fijo de posiciones más adelante en el
