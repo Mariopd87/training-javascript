@@ -135,59 +135,59 @@
 // • No se permiten las consonantes O ni Q
 // El número de matrículas aleatorias será a petición del usuario.
 
-// const exercise5 = ()=>{
-//     let platesNumber = prompt("Please, insert a number to generate:");
-//     let plate =""; 
-//  //numbers
-// const numbersGenerator=()=>{
-//     let number = Math.floor(Math.random() * (10000));
-//     if(number < 10){
-//         plate = "000" + number;
-//     }else if(number < 100){
-//         plate = "00" + number;
-//     }else if (number < 1000){
-//         plate = "0" + number;
-//     }else{
-//         plate = number.toString();
-//     }
-// };
-// const letterGenerator = ()=>{
-// const validChars = [
-//     "B",
-//     "C",
-//     "D",
-//     "F",
-//     "G",
-//     "H",
-//     "J",
-//     "K",
-//     "L",
-//     "M",
-//     "N",
-//     "P",
-//     "R",
-//     "S",
-//     "T",
-//     "V",
-//     "W",
-//     "X",
-//     "Y",
-//     "Z",
-// ];
+const exercise5 = ()=>{
+    let platesNumber = prompt("Please, insert a number to generate:");
+    let plate =""; 
+ //numbers
+const numbersGenerator=()=>{
+    let number = Math.floor(Math.random() * (10000));
+    if(number < 10){
+        plate = "000" + number;
+    }else if(number < 100){
+        plate = "00" + number;
+    }else if (number < 1000){
+        plate = "0" + number;
+    }else{
+        plate = number.toString();
+    }
+};
+const letterGenerator = ()=>{
+const validChars = [
+    "B",
+    "C",
+    "D",
+    "F",
+    "G",
+    "H",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "P",
+    "R",
+    "S",
+    "T",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+];
 
-// //letters
-// for (let index = 0; index < 3; index++) {
-//     plate += validChars[Math.floor(Math.random() * validChars.length)];
-// }
-// };
-// for (let index = 0; index < platesNumber; index++) {
-//     numbersGenerator();
-//     plate += " ";
-//     letterGenerator();
-//     console.log(plate);    
-// }
-// };
-// exercise5();
+//letters
+for (let index = 0; index < 3; index++) {
+    plate += validChars[Math.floor(Math.random() * validChars.length)];
+}
+};
+for (let index = 0; index < platesNumber; index++) {
+    numbersGenerator();
+    plate += " ";
+    letterGenerator();
+    console.log(plate);    
+}
+};
+exercise5();
 
 
 
@@ -228,7 +228,6 @@
 // },10000)  //10000; ms es 10s.
 // };
 // exercise6();
-
 
 //exercise 7:
 
