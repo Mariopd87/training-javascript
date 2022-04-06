@@ -135,59 +135,59 @@
 // • No se permiten las consonantes O ni Q
 // El número de matrículas aleatorias será a petición del usuario.
 
-const exercise5 = ()=>{
-    let platesNumber = prompt("Please, insert a number to generate:");
-    let plate =""; 
- //numbers
-const numbersGenerator=()=>{
-    let number = Math.floor(Math.random() * (10000));
-    if(number < 10){
-        plate = "000" + number;
-    }else if(number < 100){
-        plate = "00" + number;
-    }else if (number < 1000){
-        plate = "0" + number;
-    }else{
-        plate = number.toString();
-    }
-};
-const letterGenerator = ()=>{
-const validChars = [
-    "B",
-    "C",
-    "D",
-    "F",
-    "G",
-    "H",
-    "J",
-    "K",
-    "L",
-    "M",
-    "N",
-    "P",
-    "R",
-    "S",
-    "T",
-    "V",
-    "W",
-    "X",
-    "Y",
-    "Z",
-];
+// const exercise5 = ()=>{
+//     let platesNumber = prompt("Please, insert a number to generate:");
+//     let plate =""; 
+//  //numbers
+// const numbersGenerator=()=>{
+//     let number = Math.floor(Math.random() * (10000));
+//     if(number < 10){
+//         plate = "000" + number;
+//     }else if(number < 100){
+//         plate = "00" + number;
+//     }else if (number < 1000){
+//         plate = "0" + number;
+//     }else{
+//         plate = number.toString();
+//     }
+// };
+// const letterGenerator = ()=>{
+// const validChars = [
+//     "B",
+//     "C",
+//     "D",
+//     "F",
+//     "G",
+//     "H",
+//     "J",
+//     "K",
+//     "L",
+//     "M",
+//     "N",
+//     "P",
+//     "R",
+//     "S",
+//     "T",
+//     "V",
+//     "W",
+//     "X",
+//     "Y",
+//     "Z",
+// ];
 
-//letters
-for (let index = 0; index < 3; index++) {
-    plate += validChars[Math.floor(Math.random() * validChars.length)];
-}
-};
-for (let index = 0; index < platesNumber; index++) {
-    numbersGenerator();
-    plate += " ";
-    letterGenerator();
-    console.log(plate);    
-}
-};
-exercise5();
+// //letters
+// for (let index = 0; index < 3; index++) {
+//     plate += validChars[Math.floor(Math.random() * validChars.length)];
+// }
+// };
+// for (let index = 0; index < platesNumber; index++) {
+//     numbersGenerator();
+//     plate += " ";
+//     letterGenerator();
+//     console.log(plate);    
+// }
+// };
+// exercise5();
 
 
 
@@ -233,30 +233,19 @@ exercise5();
 
 // Escribe un programa que genera 100 números aleatorios, entre 0 y 500, y los almacena en un array.
 // A continuación filtra todos los números impares, ordenando los pares de mayor a menor.
-const exercise7 = () =>{
+// const exercise7 = () =>{
 
-let numbers = new Array (100);
-for(let i = 0; i < numbers.length; i++){
-    numbers[i] =Math.floor(Math.random() * 500 + 1)// para que coja el 500 tambien
+// let numbers = new Array (100);
+// for(let i = 0; i < numbers.length; i++){
+//     numbers[i] =Math.floor(Math.random() * 500 + 1)// para que coja el 500 tambien
 
-}
-//console.log(numbers);
-numbers = numbers.filter((num)=> num % 2 == 0);
-numbers.sort((a,b)=> b - a);
-console.log(numbers);
-};
-
-exercise7();
-
-
-
-
-
-
-
-
-
-
+// }
+// //console.log(numbers);
+// numbers = numbers.filter((num)=> num % 2 == 0);
+// numbers.sort((a,b)=> b - a);
+// console.log(numbers);
+// };
+// exercise7();
 
 
 //exercise 8:
@@ -277,6 +266,78 @@ exercise7();
 // con un número negativo, y las ganacias con un número positivo. A continuación, otra alerta con el saldo
 // total: “Total balance: YYY €
 
+const exercise8 = () => {
+    let clubs = [
+      "ACE",
+      "KING",
+      "QUEEN",
+      "JACK",
+      "10",
+      "9",
+      "8",
+      "7",
+      "6",
+      "5",
+      "4",
+      "3",
+      "2",
+    ];
+    let suits = ["clubs", "hearts", "spades", "diamonds"];
+    let hearts = [...clubs];
+    let spades = Array.of(...clubs);
+    let diamonds = Array.from(clubs);
+    //   spades[0] = "test";
+    //   console.log(spades);
+    //   console.log(clubs);
+    let balance = 500;
+    let bet = 0;
+    let continuePlaying = false;
+  
+    do {
+      do {
+        bet = parseInt(prompt("How much do you want to bet?"));
+        if (bet > balance) {
+          alert("Sorry, your bet is higher than your available balance.");
+          alert(`Maximum available: ${balance}`);
+        }
+      } while (bet > balance);
+      let card1 = Math.floor(Math.random() * clubs.length);
+      let card2 = Math.floor(Math.random() * clubs.length);
+      let suit1 = suits[Math.floor(Math.random() * suits.length)];
+      let suit2 = suits[Math.floor(Math.random() * suits.length)];
+      console.log(
+        `${eval(suit1)[card1]} ${suit1} vs. ${eval(suit2)[card2]} ${suit2}`
+      );
+      if (card1 < card2) {
+        balance += bet;
+        alert("You win!");
+      } else if (card1 > card2) {
+        balance -= bet;
+        alert("You lose");
+      } else {
+        alert("Draw");
+      }
+      if (balance > 0) {
+        continuePlaying =
+          prompt("Would like to continue playing").toLowerCase() == "y";
+      }
+    } while (continuePlaying && balance > 0);
+    if (balance > 500) {
+      alert(`Betting benefits: ${500 - balance} €`);
+    } else {
+      alert(`Betting benefits: ${balance - 500} €`);
+    }
+    alert(`Total balance: ${balance} €`);
+  };
+  
+  // exercise8();
+
+
+
+
+
+
+
 
 
 
@@ -294,3 +355,62 @@ exercise7();
 // Escribe un programa con una función que recibe 2 parámetros, el primero para indicar si hay que
 // cifrar o descifrar, y el segundo bien texto en claro, o bien el texto codificado mediante el cifrado
 // Cesar. El programa mostrará por consola el string resultante, codificado o no, según corresponda.
+
+// const exercise9 = (encode, text) => {
+//     const cipher = (encode, text) => {
+//       if (encode) {
+//         text = [...text].map((letter) => {
+//           switch (letter.charCodeAt(0)) {
+//             // uppers
+//             case 88:
+//               return String.fromCharCode(65);
+//             case 89:
+//               return String.fromCharCode(66);
+//             case 90:
+//               return String.fromCharCode(67);
+//             //lowers
+//             case 120:
+//               return String.fromCharCode(97);
+//             case 121:
+//               return String.fromCharCode(98);
+//             case 122:
+//               return String.fromCharCode(99);
+//             case 32:
+//               return String.fromCharCode(32);
+  
+//             default:
+//               return String.fromCharCode(letter.charCodeAt(0) + 3);
+//           }
+//         });
+//       } else {
+//         text = [...text].map((letter) => {
+//           switch (letter.charCodeAt(0)) {
+//             // uppers
+//             case 65:
+//               return String.fromCharCode(88);
+//             case 66:
+//               return String.fromCharCode(89);
+//             case 67:
+//               return String.fromCharCode(90);
+//             //lowers
+//             case 97:
+//               return String.fromCharCode(120);
+//             case 98:
+//               return String.fromCharCode(121);
+//             case 99:
+//               return String.fromCharCode(122);
+//             case 32:
+//               return String.fromCharCode(32);
+  
+//             default:
+//               return String.fromCharCode(letter.charCodeAt(0) - 3);
+//           }
+//         });
+//       }
+//       console.log(text.join(""));
+//     };
+//     cipher(encode, text);
+//   };
+  
+  // exercise9(true, "Atacar al amanecer");
+  // exercise9(false, "wrgdb zloo eh d juhdw gdb");
