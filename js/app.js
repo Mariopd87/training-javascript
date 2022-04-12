@@ -26,8 +26,8 @@
 //   box2.classList.add("dissapear") //el elemento desaparece gradualmente.
 //   box2.classList.remove("dissapear") //vuelve aparecer la clase gradualmente.
 
- //box2.classList.toggle("light"); //añade la clase a box2.
- //box2.classList.toggle("light"); //quita lo que tiene la función anterior.
+//box2.classList.toggle("light"); //añade la clase a box2.
+//box2.classList.toggle("light"); //quita lo que tiene la función anterior.
 
 // console.log(box3.classList.contains("light")); //mostrará false
 // console.log(box2.classList.contains("light")); //mostrará true
@@ -66,13 +66,21 @@
 
 //poner estilo:
 
-let paragraph = document.querySelector("p");
-paragraph.style.textAlign = "center";
-paragraph.style.textTransform = "capitalize";
-paragraph.style.backgroundColor = "black";
-paragraph.style.color = "white";
-paragraph.style.padding = "2em";
-paragraph.setAttribute("class","margin");
-//paragraph.setAttribute("title","this is a paragraph!");
-console.log(paragraph.getAttribute("class"));
-console.log(paragraph.style.cssText);
+// let paragraph = document.querySelector("p");
+// paragraph.style.textAlign = "center";
+// paragraph.style.textTransform = "capitalize";
+// paragraph.style.backgroundColor = "black";
+// paragraph.style.color = "white";
+// paragraph.style.padding = "2em";
+// paragraph.setAttribute("class","margin");
+// //paragraph.setAttribute("title","this is a paragraph!");
+// console.log(paragraph.getAttribute("class"));
+// console.log(paragraph.style.cssText);
+
+document.body.addEventListener("click", () => alert("this is the body"));
+document
+  .querySelector("section")
+  .addEventListener("click", () => alert("this is the section"));
+document
+  .querySelector("div")
+  .addEventListener("click", () => alert("this is the div"));
