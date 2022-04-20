@@ -180,3 +180,98 @@
 // let errorPromise = new Promise((resolve,
 // reject) => reject(new Error("somethingwent wrong.")));
 // setTimeout(console.log, 0, errorPromise); 
+
+// // Promise (pending)
+
+// let promise = new Promise(() => {});
+// setTimeout(console.log, 0, promise);
+
+//whitout then()
+// let promise1 = fetch("/api/movies"); //promise 1, task 1
+// let promise2 = promise1.then(callback1);
+// // promise 2, task 2
+// let promise3 = promise2.then(callback2)
+
+// // Chaining promises
+// const onResolved = (id) => {
+//     setTimeout(console.log, 0, id, "resolved");
+//     };
+//     const onRejected = (id) => {
+//     setTimeout(console.log, 0, id, "rejected");
+//     };
+    
+
+// let promise1 = new Promise((resolve, reject) => setTimeout(resolve, 1000));
+// let promise2 = new Promise((resolve, reject) => setTimeout(reject, 2000));
+// promise1.then(
+// () => onResolved("promise1"),
+// () => onRejected("promise1")
+// );
+// promise2.then(
+// () => onResolved("promise2"),
+// () => onRejected("promise2")
+// );
+
+// // catching promise
+// let promise = new Promise((resolve, reject) =>
+// setTimeout(reject(new Error("catching the error")), 1000)
+// );
+// promise.then(()=> alert("promise solved")).catch(error => console.log(error));
+
+// Async/Await
+// async function getNumber(n) {
+// console.log(n);
+// }
+// const getNumber = async function (n) {
+// console.log(n);
+// };
+// const getNumber = async () => {
+//     console.log(1);
+//     return 3;
+//     };
+//     getNumber().then(console.log);
+//     console.log(2);
+
+//     // Can't catch rejected promises
+// const getNumber = async () => {
+//     console.log(1);
+//     Promise.reject(3);
+//     };
+//     //Uncaught (in promise) 3
+//     getNumber().catch(console.log);
+//     console.log(2);
+
+    // // Now the rejected promises can be
+// // catched
+// const getNumber = async () => {
+// console.log(1);
+// await Promise.reject(3);
+// };
+// getNumber().catch(console.log);
+// console.log(2);
+
+// // Not allowed
+// const sayHello = async () => {
+//     const sayHelloWorld = () => {
+//     return await Promise.resolve("Hello");
+//     };
+//     console.log(sayHelloWorld());
+//     };
+
+//     // working as synchronous
+// const count = async () => {
+//     console.log(2);
+//     };
+//     console.log(1);
+//     count();
+//     console.log(3);
+
+// await make asynchronous the code
+const count = async () => {
+    console.log(2);
+    await null;
+    console.log(4);
+    };
+    console.log(1);
+    count();
+    console.log(3);
